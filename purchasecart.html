@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Cart</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="col-lg-12 text-center">
+        <div class="bg-secondary" style="border-radius: 20px;">
+        <h2 class="pt-2 text-light">Shopping bag</h2>
+        <hr>
+    </div>
+    <div class="row p-5">
+        <div class="col-lg-3">
+      <button type="button" onclick=""> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2zm5 11H7v-2h10v2z"/></svg></button> 
+      <button type="button"  onclick="colorChange()">    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="m12 21.35l-1.45-1.32C5.4 15.36 2 12.27 2 8.5C2 5.41 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.08C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.41 22 8.5c0 3.77-3.4 6.86-8.55 11.53L12 21.35Z"/></svg></button> 
+        <img src="https://cdna.4imprint.com/prod/700/524441.jpg" height="150px" class="pt-3" alt="">
+    </div>
+    <div class="col-lg-3 pt-4">
+        <h3>Puma</h3>
+        <h4>Round Neck T-shirt</h4>
+    </div>
+    <div class="col-lg-3 pt-5">
+      <button type="button" onclick="decrement()"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M18 12.998H6a1 1 0 0 1 0-2h12a1 1 0 0 1 0 2z"/></svg></button> 
+        <button id="counter">0</button>
+        <button type="button" onclick="increment()"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M18 14h-4v4h-4v-4H6v-4h4V6h4v4h4"/></svg></button> 
+    </div>
+    <div class="col-lg-3 pt-4">
+        <h3>Price</h3>
+        <h4 id="print">200</h4>
+    </div>
+    </div>
+    <hr>
+    <div class="row p-5">
+      <div class="col-lg-3">
+    <button type="button" onclick=""> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2zm5 11H7v-2h10v2z"/></svg></button> 
+    <button type="button"  onclick="colorChange()">    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="m12 21.35l-1.45-1.32C5.4 15.36 2 12.27 2 8.5C2 5.41 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.08C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.41 22 8.5c0 3.77-3.4 6.86-8.55 11.53L12 21.35Z"/></svg></button> 
+      <img src="https://cdna.4imprint.com/prod/700/524441.jpg" height="150px" class="pt-3" alt="">
+  </div>
+  <div class="col-lg-3 pt-4">
+      <h3>Puma</h3>
+      <h4>Round Neck T-shirt</h4>
+  </div>
+  <div class="col-lg-3 pt-5">
+    <button type="button" onclick="decrement1()"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M18 12.998H6a1 1 0 0 1 0-2h12a1 1 0 0 1 0 2z"/></svg></button> 
+      <button id="counter">0</button>
+      <button type="button" onclick="increment1()"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M18 14h-4v4h-4v-4H6v-4h4V6h4v4h4"/></svg></button> 
+  </div>
+  <div class="col-lg-3 pt-4">
+      <h3>Price</h3>
+      <h4 id="print">200</h4>
+  </div>
+  </div>
+  <hr>
+  </div>  
+    </div>  
+    
+    
+    <script>
+
+      var obj = {
+        price : 200
+      }
+      function colorChange(){
+        var a = document.getElementById()
+      }
+      function decrement() {
+        let value = parseInt(document.getElementById("counter").textContent);
+        value = value - 1;
+        document.getElementById("counter").innerHTML = value;
+        document.getElementById("counter").style.color = "red";
+        var para = obj.price*value;
+        document.getElementById("print").innerHTML = para;
+      }
+      function increment() {
+        let value = parseInt(document.getElementById("counter").innerText);
+        value = value + 1;
+        document.getElementById("counter").innerHTML = value;
+        document.getElementById("counter").style.color = "green";
+        var para = obj.price*value;
+        document.getElementById("print").innerHTML = para;
+      }
+      var obj = {
+        price : 200
+      }
+      function colorChange(){
+        var a = document.getElementById()
+      }
+      function decrement1() {
+        let value = parseInt(document.getElementById("counter").textContent);
+        value = value - 1;
+        document.getElementById("counter").innerHTML = value;
+        document.getElementById("counter").style.color = "red";
+        var para = obj.price*value;
+        document.getElementById("print").innerHTML = para;
+      }
+      function increment1() {
+        let value = parseInt(document.getElementById("counter").innerText);
+        value = value + 1;
+        document.getElementById("counter").innerHTML = value;
+        document.getElementById("counter").style.color = "green";
+        var para = obj.price*value;
+        document.getElementById("print").innerHTML = para;
+      }
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

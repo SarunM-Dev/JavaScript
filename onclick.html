@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <title>biodata</title>
+</head>
+<body>
+    <div class="p-5 text-dark">
+    <form action="validation">
+        <label for="name">Enter the your name</label><br/>
+            <input type="text" name="name" id="name" placeholder="Enter the name" value=""><br/>
+        
+          <label for="fathername">Enter your father name</label><br/>
+            <input type="text" name="fathername" id="fathername" placeholder="Enter the fathername" value=""><br/>
+    
+          <label for="gender">Gender</label><br/>
+            <input type="gender" name="gender" id="gender" placeholder="Enter the gender" value=""><br/>
+       
+          <label for="dob">Date of birth</label><br/>
+            <input type="text" name="dob" id="dob" placeholder="Enter the dob" value=""><br/>
+       
+          <label for="phonenumber">Enter the phonenumber</label><br/>
+            <input type="number" name="phonenumber" id="phonenumber" placeholder="Enter the phonenumber" value=""><br/>
+    
+          <label for="email">Email</label><br/>
+            <input type="text" name="email" id="email" placeholder="Enter the email" value=""><br/>
+      
+        <button type="button" onclick="bioData()">Submit</button>
+    </form>
+    <table id="tableid" border="5px">
+
+    </table>
+    </div>
+    <style>
+        body{
+            background-color: rgb(232, 231, 230);
+        }
+        label{
+            color: blueviolet;
+            font-weight: bold;
+        }
+        button{
+            background-color: blueviolet;
+            border-radius: 10px;
+            color: white;
+        }
+    </style>
+<script>    
+    function bioData(){
+      let name = document.getElementById("name").value;
+      let fathername = document.getElementById("fathername").value;
+      let gender = document.getElementById("gender").value;
+      let dob = document.getElementById("dob").value;
+      let phonenumber = document.getElementById("phonenumber").value;
+      let email = document.getElementById("email").value;
+        
+        document.getElementById("tableid").innerHTML="<tr><th>Name</th><th>FatherName</th><th>Gender</th><th>Dateofbirth</th><th>Phonenumber</th><th>Email</th></tr><tr><td>"+name+"</td><td>"+fathername+"</td><td>"+gender+"</td><td>"+dob+"</td><td>"+phonenumber+"</td><td>"+email+"</td></tr>";
+
+        
+    }
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+</body>
+</html>

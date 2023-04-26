@@ -1,0 +1,197 @@
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+* {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+    cursor: pointer;
+}
+
+nav {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4% 10%;
+    background-color: hsl(218, 28%, 13%);
+
+}
+
+ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* margin: 2%; */
+    width: 35%;
+}
+
+li {
+    /* background-color: red; */
+    margin: 0% 10%;
+}
+
+.header {
+    height: 100vh;
+    max-width: 100vw;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: hsl(218, 28%, 13%);
+    justify-content: center;
+}
+
+.header_details h1 {
+    text-align: center;
+    color: white;
+}
+
+.header_details h5 h5{
+    color: white;
+    font-weight: 400 !important;
+    text-align: center;
+    letter-spacing: 2px;
+    margin-top: 4%;
+    line-height: 30px;
+}
+
+.header {
+    /* min-height: 100vh; */
+    height: auto;
+    /* background-color: red; */
+}
+
+.button button {
+    margin-top: 34%;
+    font-size: 20px;
+    color: whitesmoke;
+    background-color: hsl(176, 68%, 64%);
+    border-radius: 20px;
+    padding: 10px 60px;
+    border: none;
+}
+
+
+
+.testimonial-container .text:hover {
+    /* box-shadow: none; */
+    cursor: pointer;
+    box-shadow: 2px 0px 20px hsl(216, 53%, 9%);
+}
+
+.footer-section {
+    background-color: hsl(216, 53%, 9%);
+    color: white;
+}
+
+.footer-container {
+    /* background-color: red; */
+    padding: 2% 8%;
+}
+
+.footer-main {
+    padding: 20px;
+    gap: 20px;
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr 2fr auto;
+}
+
+.location-footer-main {
+    /* background-color: red; */
+    padding: 20px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.location-footer-main img {
+    padding-right: 20px;
+}
+
+.call-and-mail {
+    padding: 20px;
+    line-height: 20px;
+    width: 100%;
+}
+.pb-5{
+    padding-right: 30px;
+}
+
+.call,
+.mail {
+    /* background-color: red; */
+    display: flex;
+    margin-bottom: 20px;
+    width: 100%;
+    /* padding: 10px; */
+}
+
+.call img,
+.mail img {
+    padding-right: 20px;
+}
+
+.first-ul,
+.second-ul,
+.third-ul {
+    /* background-color: blue; */
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 100%;
+}
+
+
+.first-ul li,
+.second-ul li,
+.third-ul li {
+    padding-bottom: 10px;
+}
+
+.third-ul li {
+  border: 1px solid white; */
+    display: flex;
+    padding: 10px;
+    margin-bottom: 5px;
+    
+    .card-title{
+        color: black;
+    }
+}
+.justify-content-around{
+    background-color: rgb(208, 208, 209);
+}
+.div4{
+    background-color: hsl(218, 28%, 13%);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

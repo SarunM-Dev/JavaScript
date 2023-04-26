@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Calc</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="calculator">
+        <div class="input" id="input"></div>
+        <div class="buttons">
+          <div class="leftPanel">
+            <div class="numbers">
+              <div>7</div>
+              <div>8</div>
+              <div>9</div>
+            </div>
+            <div class="numbers">
+              <div>4</div>
+              <div>5</div>
+              <div>6</div>
+            </div>
+            <div class="numbers">
+              <div>1</div>
+              <div>2</div>
+              <div>3</div>
+            </div>
+            <div class="numbers">
+              <div>0</div>
+              <div>.</div>
+              <div id="clear">C</div>
+            </div>
+            <div class="operators">
+              <button>+</button>
+              <button>-</button>
+              <button>*</button>
+              <button>/</button>
+                
+                <div class="equal" id="result">=</div>
+              </div>
+            </div>   
+        </div>
+      </div>
+      <script>
+        var result = 0;
+        function calc(calc) {
+            var firstvalue = parseInt(document.getElementById("firstvalue").value);
+            var secondvalue = parseInt(document.getElementById("secondvalue").value);
+            switch(calc) {
+                case 1:  result = firstvalue + secondvalue;
+                    break;
+                case 2:  result = firstvalue - secondvalue;
+                    break;
+                case 3:  result = firstvalue * secondvalue;
+                    break;
+                case 4:  result = firstvalue / secondvalue;                    
+                    break;
+                case 5:  result = firstvalue % secondvalue;
+                    break;    
+            }
+            document.getElementById("total").value = result;   
+        }
+    </script>
+      <style>
+body {
+  width: 400px;
+  margin: 4% auto;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  letter-spacing: 5px;
+  
+}
+.calculator {
+  padding: 20px;
+  -webkit-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 5px 5px 4px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 1px;
+}
+.input {
+  border: 1px solid #070505;
+  border-radius: 1px;
+  height: 60px;
+  padding-right: 15px;
+  padding-top: 10px;
+  text-align: right;
+  margin-right: 6px;
+  font-size: 2.5rem;
+  overflow-x: auto;
+}
+.input:hover {
+  border: 1px solid #bbb;
+  -webkit-box-shadow: inset 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+}
+.operators button {
+  display: inline-block;
+  border: 1px solid #bbb;
+  border-radius: 1px;
+  width: 70px;
+  text-align: center;
+  padding: 10px;
+  margin: 20px 4px 10px 0;
+  cursor: pointer;
+  background-color: #ddd;
+  transition: border-color .2s ease-in-out, background-color .2s, box-shadow .2s;
+}
+.operators button:hover {
+  background-color: #ddd;
+  -webkit-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+  border-color: #aaa;
+}
+.operators div:active {
+  font-weight: bold;
+}
+.leftPanel {
+  display: inline-block;
+}
+.numbers div {
+  display: inline-block;
+  border: 1px solid #ddd;
+  border-radius: 7px;
+  width: 80px;
+  text-align: center;
+  padding: 10px;
+  margin: 10px 30px 10px 0;
+  cursor: pointer;
+  background-color: #f9f9f9;
+}
+.numbers div:hover {
+  background-color: #f1f1f1;
+  -webkit-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+  border-color: #bbb;
+}
+.numbers div:active {
+  font-weight: bold;
+}
+div.equal {
+  display: inline-block;
+  border: 1px solid #00ddff;
+  border-radius: 1px;
+  width: 17%;
+  text-align: center;
+ padding: 10px;
+  margin: 10px 6px 10px 0;
+  vertical-align: top;
+  cursor: pointer;
+  color: #FFF;
+  background-color: #00c8ff;
+  transition: all .2s ease-in-out;
+}
+div.equal:hover {
+  background-color: #0bb8f8;
+  -webkit-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.2);
+  border-color: #08dfe6;
+}
+div.equal:active {
+  font-weight: bold;
+}
+      </style>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

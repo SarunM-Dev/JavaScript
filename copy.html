@@ -1,0 +1,217 @@
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>User Input and Local Storage Example</title>
+    <style>
+      /* Styles for the card */
+      .card {
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin-bottom: 10px;
+      }
+      .card h2 {
+        margin-top: 0;
+      }
+      .card p {
+        margin-bottom: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <label for="inputField">Enter some text:</label>
+      <input type="text" id="inputField">
+      <button id="saveButton">Save</button>
+    </div>
+    <div id="cardContainer"></div>
+
+    <script>
+      // Define the object that handles input and storage
+      const inputHandler = {
+        saveInput: function() {
+          const input = document.getElementById("inputField").value;
+          localStorage.setItem("userInput", input);
+          this.displayCard();
+        },
+        displayCard: function() {
+          const input = localStorage.getItem("userInput");
+          if (input) {
+            const cardContainer = document.getElementById("cardContainer");
+            const card = document.createElement("div");
+            card.classList.add("card");
+            card.innerHTML = `
+              <h2>User Input</h2>
+              <p>${input}</p>
+            `;
+            cardContainer.appendChild(card);
+          }
+        }
+      };
+
+      // Set up the event listener for the save button
+      const saveButton = document.getElementById("saveButton");
+      saveButton.addEventListener("click", function() {
+        inputHandler.saveInput();
+      });
+
+      // Display any existing saved data on page load
+      inputHandler.displayCard();
+    </script>
+  </body>
+</html>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>User Login</title>
+  </head>
+  <body>
+    <h1>User Login</h1>
+    <form id="login-form">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required>
+      <br>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+      <br>
+      <button type="submit">Login</button>
+    </form>
+    <div id="card-container"></div>
+
+    <script>
+        // define regular expressions for username and password validation
+const usernameRegex = /^[a-zA-Z0-9_-]{3,16}$/;
+const passwordRegex = /^[a-zA-Z0-9!@#$%^&*()_+=[\]{};':"\\|,.<>/?-]{6,32}$/;
+
+// define function to save user data in local storage
+function saveUserData(username, password) {
+  localStorage.setItem("username", username);
+  localStorage.setItem("password", password);
+}
+
+// define function to retrieve user data from local storage
+function getUserData() {
+  const username = localStorage.getItem("username");
+  const password = localStorage.getItem("password");
+  return { username, password };
+}
+
+// define function to print user card
+function printUserCard(username) {
+  const cardContainer = document.getElementById("card-container");
+  const card = document.createElement("div");
+  card.classList.add("card");
+  card.innerHTML = `<h2>Welcome, ${username}!</h2>`;
+  cardContainer.appendChild(card);
+}
+
+// define function to handle login form submission
+function handleLogin(event) {
+  event.preventDefault();
+  const usernameInput = document.getElementById("username");
+  const passwordInput = document.getElementById("password");
+  const username = usernameInput.value.trim();
+  const password = passwordInput.value.trim();
+  if (usernameRegex.test(username) && passwordRegex.test(password)) {
+    saveUserData(username, password);
+    printUserCard(username);
+    usernameInput.value = "";
+    passwordInput.value = "";
+  } else {
+    alert("Invalid username or password!");
+  }
+}
+
+// add event listener to login form
+const loginForm = document.getElementById("login-form");
+loginForm.addEventListener("submit", handleLogin);
+
+// retrieve user data from local storage on page load and print user card if data exists
+const userData = getUserData();
+if (userData.username && userData.password) {
+  printUserCard(userData.username);
+}
+
+    </script>
+  </body>
+</html> -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>User Login</title>
+  </head>
+  <body>
+    <h1>User Login</h1>
+    <form id="login-form">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required>
+      <br>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+      <br>
+      <button type="submit">Login</button>
+    </form>
+    <div id="card-container"></div>
+
+    <script>
+        // define regular expressions for username and password validation
+const usernameRegex = /^[a-zA-Z0-9_-]{3,16}$/;
+const passwordRegex = /^[a-zA-Z0-9!@#$%^&*()_+=[\]{};':"\\|,.<>/?-]{6,32}$/;
+
+// define empty array to store user data
+let users = [];
+
+// define function to save user data in local storage
+function saveUserData() {
+  localStorage.setItem("users", JSON.stringify(users));
+}
+
+// define function to retrieve user data from local storage
+function getUserData() {
+  const usersString = localStorage.getItem("users");
+  return JSON.parse(usersString);
+}
+
+// define function to print user card
+function printUserCard(username) {
+  const cardContainer = document.getElementById("card-container");
+  const card = document.createElement("div");
+  card.classList.add("card");
+  card.innerHTML = `<h2>Welcome, ${username}!</h2>`;
+  cardContainer.appendChild(card);
+}
+
+// define function to handle login form submission
+function handleLogin(event) {
+  event.preventDefault();
+  const usernameInput = document.getElementById("username");
+  const passwordInput = document.getElementById("password");
+  const username = usernameInput.value.trim();
+  const password = passwordInput.value.trim();
+  if (usernameRegex.test(username) && passwordRegex.test(password)) {
+    const user = { username, password };
+    users.push(user);
+    saveUserData();
+    printUserCard(username);
+    usernameInput.value = "";
+    passwordInput.value = "";
+  } else {
+    alert("Invalid username or password!");
+  }
+}
+
+// add event listener to login form
+const loginForm = document.getElementById("login-form");
+loginForm.addEventListener("submit", handleLogin);
+
+// retrieve user data from local storage on page load and print user card if data exists
+users = getUserData() || [];
+if (users.length > 0) {
+  const lastUser = users[users.length - 1];
+  printUserCard(lastUser.username);
+}
+
+    </script>
+  </body>
+</html>

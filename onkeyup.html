@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <title>Employee</title>
+</head>
+<body class="">
+    <div class="p-5">
+    <form action="employee">
+        <label for="Employename">Employee name</label><br/>
+        <input type="text" name="employeename" id="empid" placeholder="Enter the Employee name"><br/>
+        <label for="Employename">Enter your Per Year Package</label><br/>
+        <input type="text" name="totalpackage" id="totalpackage" placeholder="Enter the Totalpackage" onkeyup="employeDetails()"><br/>
+        
+        <label for="Employename">Your monthly salary</label><br/>
+        <input type="number" name="monthlysalary" id="monthlysalary" placeholder="Your Salary Monthlysalary" ><br/>
+        <label for="Employename">Your pf amount</label><br/>
+        <input type="number" name="monthlysalary" id="pfamount" placeholder="Your Pf amount" ><br/>
+        <label for="Employename">Your esi amount</label><br/>
+        <input type="number" name="monthlysalary" id="esiamount" placeholder="Your Esi amount" ><br/>
+        <label for="Employename">Your income tax</label><br/>
+        <input type="number" name="monthlysalary" id="incometax" placeholder="Your income tax" ><br/>
+        <label for="Employename">Your Final Salary</label><br/>
+        <input type="number" name="monthlysalary" id="totalamount" placeholder="Your income tax">
+        
+    </form>
+</div>
+    <style>
+        body{
+            background-color: rgb(241, 240, 240);
+        }
+        label{
+            color: blueviolet;
+        }
+        input{
+            border-radius: 10px;
+            border: 2px solid black;
+        }
+    </style>
+    <script>
+        function employeDetails(){
+            let name = document.getElementById("empid").value
+            let package = document.getElementById("totalpackage").value
+            package=parseInt(package)
+            let total = document.getElementById("monthlysalary").value=package/12;
+            let pf = document.getElementById("pfamount").value=total*(8/100);
+            let per = document.getElementById("esiamount").value=total*(9/100);
+            let income = document.getElementById("incometax").value=total*(15/100);
+            let final = document.getElementById("totalamount").value=income+pf+per;
+            
+        }
+    </script>
+</body>
+</html>

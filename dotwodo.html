@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Datas</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    <div>
+        <form action="">
+            ProductName : <input type="text" placeholder="Enter Your Productname" id="productname"> <br>
+            Qty : <input type="text" placeholder="Enter Your Qty" id="qty"><br>
+            Rate : <input type="text" placeholder="Enter Your Product Rate" id="productrate" ><br>
+            <!-- Amount : <input type="number" placeholder="Enter Your Product Amount" id="productamount"><br>
+            Tax : <input type="number" placeholder="Enter Your Tax" id="tax"><br>
+            Total : <input type="number" placeholder="Enter Your Total" id="producttotal"><br> -->
+            <button type="button" onclick="cartitem()">Add To cart</button>
+          </form>
+          
+          <table border="5px">
+            <tr>
+              <th>S.no</th>
+              <th>Product Name</th>
+              <th>Product Qty</th>
+              <th>Rate</th>
+              <th>Amount</th>
+              <th>Tax</th>
+              <th>Total Amount</th>
+              <th>Actions</th>
+            </tr>
+            <tbody id="tableid"></tbody>
+          </table>
+          
+          <script>
+            var list = [];
+          
+            function cartitem() {
+              var name = document.getElementById("productname").value;
+              var qty = parseInt(document.getElementById("qty").value);
+              var rate = parseInt(document.getElementById("productrate").value);
+              var amount = rate * qty;
+              var tax = amount * (8 / 100);
+              var total = amount + tax;
+              
+              list.push({
+                firstname: name,
+                qty: qty,
+                rate: rate,
+                amount: amount,
+                tax: tax,
+                total: total
+              });
+
+              
+            // list.push(name);
+            // list.push(qty);
+            // list.push(rate);
+            // list.push(amount);
+            // list.push(tax);
+            // list.push(total);
+          
+              document.getElementById("productname").value = "";
+              document.getElementById("qty").value = "";
+              document.getElementById("productrate").value = "";
+            //   document.getElementById("productamount").value = "";
+            //   document.getElementById("tax").value = "";
+            //   document.getElementById("producttotal").value = "";
+              
+              add_item();
+            }
+          
+            function add_item() {
+              var a = "";
+              var b = 0;
+              list.forEach(function(value, index) {
+                b+=1;
+                a += "<tr><td>"+b+"</td><td>" + value.firstname + "</td><td>" + value.qty + "</td><td>" + value.rate + "</td><td>" + value.amount + "</td><td>" + value.tax + "</td><td>" + value.total + "</td><td><button onclick='remove_item(" + index + ")'>Remove</button></td></tr>";
+              });
+              document.getElementById("tableid").innerHTML = a;
+            }
+          
+            function remove_item(id) {
+              list.splice(id, 1);
+              add_item();
+            }
+          </script>
+          
+
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

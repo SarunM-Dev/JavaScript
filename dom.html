@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    
+        <!-- <label for="name">UserName</label><br/>
+        <input type="text" name="name" id="username"><br/> -->
+        <!-- <label for="passowrd">Password</label><br/>
+        <input type="password" name="password" id="password"><br/>
+        <label for="phonenumber">Phone number</label><br/>
+        <input type="number" name="phonenumber" id="phonenumber"><br/> -->
+       <!-- <div class="example">Example1</div>
+       <div class="example">Example2</div> -->
+       <!-- <button type="button" onclick="loginPage()">Login</button> -->
+        <!-- <p>Sarun</p>
+        <p>Sarun</p>
+        <p>Sarun</p>
+        <p>Sarun</p>
+        <p>Sarun</p>
+        <h1>Heading</h1>
+        <h1>Heading</h1>
+        <h1>Heading</h1>
+        <h1>Heading</h1>  -->
+        <!-- <form action="">
+        <input type="button" value="comment" onclick="loginPage()">
+        <div id="mylocation"></div>
+    </form>
+         -->
+        <!-- <h1>Sarun</h1> -->
+  <form name = "myforms">
+    <input type="password" name="userword" id="password" value="" onkeyup="loginPage()">
+    <span id="mylocation"></span>
+  </form>   
+  <input type="text" onblur="loginPage()">
+    <script>
+       function loginPage(){  
+        let msg;
+        if(document.myforms.userword.value.length>10){
+        msg="good";
+       }  else {
+        msg="poor";
+       }
+       document.getElementById("mylocation").innerText=msg;
+
+        
+    
+        
+
+
+
+
+
+            // let action = document.getElementsByTagName("form");
+            // document.getElementById("mylocation").innerHTML="<h1>Sarun</h1>"
+            //     mylocation.style.backgroundColor = "red";
+        // let userName = document.getElementsByClassName("example");
+        // let userName = document.getElementsById("name");
+        // console.log(userName);
+    //     let ptag = document.getElementsByTagName("p");
+    //     let h1tag = document.getElementsByTagName("h1");
+    //     console.log(ptag[0]);
+    //     console.log(h1tag[0]);
+    //     ptag[0].innerHTML="Hello World";
+    //     ptag[1].style.backgroundColor = "red";
+    //     for (let i = 0; i < h1tag.length; i++) {
+    //      if (i % 2 == 0) {
+    //      h1tag[i].style.backgroundColor = "green";
+    //      }
+    // }
+
+        // let h1tag = document.getElementsByTagName("h1");
+        // console.log(h1tag);
+        // let passWord = document.getElementById("password").value
+        // let phoneNumber = document.getElementById("phonenumber").value
+        //  console.log(phoneNumber);
+        //  console.log(typeof(phoneNumber));
+        //  phoneNumber=parseInt(phoneNumber);
+        //  console.log(phoneNumber)
+        //  console.log(typeof(phoneNumber));
+        //     if(userName === ""){
+        //         alert("Please fill the name");
+        //     } else if(passWord === ""){
+        //         alert("Please fill the password")
+        //     } else if(PhoneNumber === ""){
+        //         alert("fill the number")
+        //     }
+    }
+    loginPage()
+    </script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <style>
+    .tableBorder{
+        border: 1px solid black;
+        width: 100px;
+        height: 100px;
+    }
+    #myTable{
+        border:1px solid black;
+    }
+    td{
+        border:1px solid black;
+    }
+  </style>
+  <body>
+      <div id="divid">
+
+      </div>
+      <script>
+   
+   // Create an array of objects that contains product information
+let obj = [{
+    img: "https://cdn.pixabay.com/photo/2016/12/06/09/31/blank-1886008__340.png",
+    product: "polo-tshirt",
+    price: 750,
+    size: 'XL'
+}, {
+    img: "https://www.shutterstock.com/image-vector/denim-260nw-167397755.jpg",
+    product: "denim-Shirt",
+    price: 1550,
+    size: 'S'
+},
+{
+    img: "https://cdn.pixabay.com/photo/2016/12/06/09/31/blank-1886008__340.png",
+    product: "polo-tshirt",
+    price: 750,
+    size: 'XXl'
+}, {
+    img: "HI",
+    product: "denim-Shirt",
+    price: 1550,
+    size: 'M'
+}]
+
+   // Create a table element and set its id and class attributes
+var table_name=document.createElement("table");
+table_name.setAttribute("id","myTable");
+table_name.setAttribute("class","tableBorder");
+document.body.appendChild(table_name);
+        // Loop through the array of objects
+for(var i=0;i<obj.length;i++){
+    // Create a new table row element and set its id attribute
+    var y=document.createElement("tr");
+    y.setAttribute("id","myTr"+i);
+    document.getElementById("myTable").appendChild(y);
+    // Loop through the properties of the current object
+    for(let j=0; j< Object.keys(obj[i]).length;j++) {
+        // Create a new table cell element
+        let z=document.createElement("td");
+        // Check the type of the current property value
+        let checkType = typeof(obj[i][Object.keys(obj[i])[j]]);
+        var objKeyValue;
+        // If the property value is not a number, split the value string
+        if(checkType != 'number') {
+            objKeyValue = (obj[i][Object.keys(obj[i])[j]]).split(":");
+        }
+        // If the value string starts with 'http' or 'https', create an img element
+        if(objKeyValue[0] == 'https' || objKeyValue[0] == 'http') {
+            let imgTag = document.createElement('img');
+            imgTag.src = obj[i][Object.keys(obj[i])[j]]
+            z.appendChild(imgTag);
+        } else {
+            // Otherwise, create a p element and set its innerHTML
+            let t=document.createElement("p");
+            t.innerHTML=obj[i][Object.keys(obj[i])[j]];
+            z.appendChild(t);
+        }
+        // Append the table cell to the current table row
+        document.getElementById("myTr"+i).appendChild(z);
+    }  
+};
+
+        
+      </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

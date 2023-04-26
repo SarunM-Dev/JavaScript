@@ -1,0 +1,36 @@
+body{
+    background-color: grey;
+}
+h1{
+    color: white;
+    margin: auto;
+}
+.alter{
+    border-radius: 50px;
+    background-color: brown;
+    color: aliceblue;
+}
+table{
+    border-radius: 50px;
+    border: solid white;
+    background-color: rgb(10, 10, 58);
+    height: 200px;
+    margin: auto;
+    width: 400px;
+    margin-top: 30px;
+    color: white;
+}
+.div1{
+    padding-top: 30px;
+}
+button{
+    margin-top: 10px;
+    border-radius: 20px;
+    background-color: blue;
+    color: white;
+    height: 30px;
+}
+.move{
+    
+}
+

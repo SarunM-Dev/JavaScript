@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>dashboard</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+        
+    <div class="div1 container">
+        <h1>TODO APP</h1>
+        <input type="text" class="userinput" id="userinput">
+        <button class="" onclick="keepNotes()" style="background-color: rgb(37, 50, 55);">
+          <svg class="text-white" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M18 14h-4v4h-4v-4H6v-4h4V6h4v4h4"/>
+          </svg>
+        </button>
+        <h4 style="margin-left: 70px;">Tasks</h4>
+        <div id="show"></div>
+      </div>
+      
+      <script>
+        var notes = [];
+        function keepNotes() {
+          var note = document.getElementById("userinput").value;
+          var today = Date(Date.now()).toString();
+          notes.push({
+            text: note,
+            date: today
+          });
+          document.getElementById("userinput").value = "";
+          data_add();
+        }
+        function data_add() {
+          var a = "";
+          notes.forEach(function (value, index) {
+            a += `<div class="card-body">
+              <h5 class="card-title">Note ${index + 1} Study</h5>
+              <p class="card-text">${value.date}</p>
+              <p class="card-text">${value.text}</p>
+              <a href="#" class="btn btn-primary" onclick="remove_item(${index})">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                  <path fill="currentColor" d="M19 4h-3.5l-1-1h-5l-1 1H5v2h14M6 19a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7H6v12Z"/>
+                </svg>
+              </a>
+              <a href="#" class="btn btn-primary" onclick="edit_item(${index})">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                  <path fill="currentColor" d="M6 22q-.825 0-1.413-.588T4 20V4q0-.825.588-1.413T6 2h8l6 6v3.1l-8 7.975V22H6Zm8 0v-2.125l5.15-5.175l2.15 2.1l-5.175 5.2H14Zm8.025-5.9L19.9 13.975l.7-.7q.3-.3.725-.3t.7.3l.7.725q.275.3.275.713t-.275.687l-.7.7ZM13 9h5l-5-5v5Z"/>
+                </svg>
+              </a>
+            </div>`;
+          });
+          document.getElementById("show").innerHTML = a;
+        };
+        
+            function remove_item(id) {
+                notes.splice(id, 1);
+                data_add();
+            }
+            function edit_item(){
+
+            }
+        </script>
+
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

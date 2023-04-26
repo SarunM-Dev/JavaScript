@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>array</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body><br/>
+    <form>
+        <label class="text-primary" style="font-weight: bold;">Enter your name:</label><br>
+        <input type="text" name="Yourname" id="name" placeholder="Enter your name">
+        <button class="bg-success text-light" type="button" onclick="push_item()">Push</button>
+        <button class="bg-danger text-light" type="button" onclick="pop_item()">Pull</button>
+        <button class="bg-success text-light" type="button" onclick="unshift_item()">Unshift</button>
+        <button class="bg-danger text-light" type="button" onclick="shift_item()">Shift</button>
+      </form><br/>
+      
+      <table border="5px">
+        <tr>
+          <th>Push List</th>
+          <th>Pop List</th>
+          <th>Unshift List</th>
+          <th>Shift List</th>
+        </tr>
+        <tbody id="tableid"></tbody>
+      </table>
+      
+      <script>
+        var list = [];
+      
+        function push_item() {
+          var name = document.getElementById("name").value;
+          list.push({
+            firstname: name
+          });
+          add_item();
+        }
+      
+        function pop_item() {
+          list.pop();
+          add_item();
+        }
+      
+        function unshift_item() {
+          var name = document.getElementById("name").value;
+          list.unshift({
+            firstname: name
+          });
+          add_item();
+        }
+      
+        function shift_item() {
+          list.shift();
+          add_item();
+        }
+      
+        function add_item() {
+          var print = " ";
+          list.forEach(function(value, index) {
+            print += "<tr><td>"+value.firstname+"</td><td>"+value.firstname+"</td><td>"+value.firstname+"</td><td>"+value.firstname+"</td></tr>";
+          });
+          document.getElementById("tableid").innerHTML = print;
+        }
+      </script>
+      
+      
+
+
+
+
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
